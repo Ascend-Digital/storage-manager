@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace AscendDigital\StorageManager\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use AscendDigital\StorageManager\Traits\AutomateTracking;
 use App\Models\User;
+use AscendDigital\StorageManager\Traits\AutomateTracking;
+use Illuminate\Database\Eloquent\Model;
 
 class FileUpload extends Model
 {

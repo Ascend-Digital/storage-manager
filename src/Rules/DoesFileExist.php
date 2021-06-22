@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Storage;
  */
 class DoesFileExist implements Rule
 {
-
     /**
      * Determine if the validation rule passes.
      *

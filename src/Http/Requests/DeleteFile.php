@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AscendDigital\StorageManager\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use AscendDigital\StorageManager\Rules\DoesFileExist;
+use Illuminate\Foundation\Http\FormRequest;
 
 class DeleteFile extends FormRequest
 {
@@ -29,8 +29,8 @@ class DeleteFile extends FormRequest
         return [
             'key' => [
                 'required',
-                new DoesFileExist
-            ]
+                new DoesFileExist,
+            ],
         ];
     }
 }

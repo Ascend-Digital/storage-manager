@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Request;
 /**
  * @since 1.0.0
  */
-trait Requests {
-
+trait Requests
+{
     /**
      * Resolve the User Agent.
      *
@@ -43,5 +43,4 @@ trait Requests {
 
         return Request::fullUrl();
     }
-
 }

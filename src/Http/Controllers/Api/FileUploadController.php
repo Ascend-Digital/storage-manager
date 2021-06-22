@@ -8,15 +8,14 @@ use AscendDigital\StorageManager\Http\Requests\DeleteFile;
 use AscendDigital\StorageManager\Http\Requests\UploadFile;
 
 use AscendDigital\StorageManager\StorageManagerFacade as StorageManager;
-use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Routing\Controller as BaseController;
 
 /**
  * @since 1.0.0
  */
 class FileUploadController extends BaseController
 {
-
     /**
      * Store a newly created resource in storage.
      *
@@ -28,17 +27,17 @@ class FileUploadController extends BaseController
     {
         $file = StorageManager::uploadFile($request->file, $request->tag);
 
-        if(is_null($file)){
+        if (is_null($file)) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Unexpected error occurred, unable to process request'
+                'message' => 'Unexpected error occurred, unable to process request',
             ], 500);
         }
 
         return response()->json([
                 'status' => 'success',
                 'data' => $file,
-                'message' => 'File saved successfully'
+                'message' => 'File saved successfully',
             ], 201);
     }
 
@@ -51,20 +50,16 @@ class FileUploadController extends BaseController
      */
     public function destroy(DeleteFile $request): JsonResponse
     {
-        if(StorageManager::deleteFile($request->key)){
-
+        if (StorageManager::deleteFile($request->key)) {
             return response()->json([
                 'status' => 'success',
-                'message' => 'File deleted successfully'
+                'message' => 'File deleted successfully',
                 ], 200);
-
-        }else{
+        } else {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Unexpected error occurred, unable to process request'
+                'message' => 'Unexpected error occurred, unable to process request',
             ], 500);
         }
-
-
     }
 }

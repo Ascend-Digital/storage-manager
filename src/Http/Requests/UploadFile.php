@@ -27,6 +27,7 @@ class UploadFile extends FormRequest
     public function rules()
     {
         $maxFileSize = Config::get('storageManager.max_file_size');
+
         return [
             'file' => 'required|file|max:' . $maxFileSize,
             'tag' => 'nullable|min:3|max:50',
@@ -43,7 +44,7 @@ class UploadFile extends FormRequest
         return [
             'file.required' => 'A file is required',
             'file.file' => 'The uploaded item is not a valid file',
-            'file.max' => 'Maximum file upload size exceeded'
+            'file.max' => 'Maximum file upload size exceeded',
         ];
     }
 }

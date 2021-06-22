@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 class FileUploadObserver
 {
-
     /**
      * Handle the User "deleted" event for the file upload.
      *

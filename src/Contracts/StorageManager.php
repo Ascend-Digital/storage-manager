@@ -8,7 +8,6 @@ use AscendDigital\StorageManager\Models\FileUpload;
 
 interface StorageManager
 {
-
     /**
      * Uploads a file
      *
@@ -27,5 +26,4 @@ interface StorageManager
      * @return bool        true if successful deletion
      */
     public static function deleteFile(string $key): bool;
-
 }

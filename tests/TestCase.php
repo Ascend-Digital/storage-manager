@@ -2,9 +2,9 @@
 
 namespace AscendDigital\StorageManager\Tests;
 
+use AscendDigital\StorageManager\StorageManagerServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use AscendDigital\StorageManager\StorageManagerServiceProvider;
 
 class TestCase extends Orchestra
 {

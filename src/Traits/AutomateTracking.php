@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Config;
  */
 trait AutomateTracking
 {
-
     /**
      * Hook onto the boot method
      *
@@ -21,7 +20,7 @@ trait AutomateTracking
      */
     protected static function bootAutomateTracking()
     {
-        if ( ! Config::get('storageManager.tracking')) {
+        if (! Config::get('storageManager.tracking')) {
             return;
         }
         /**
@@ -30,7 +29,7 @@ trait AutomateTracking
          */
         static::creating(function ($model) {
             try {
-                $model->user_id    = auth()->user() ? auth()->user()->id : null;
+                $model->user_id = auth()->user() ? auth()->user()->id : null;
                 $model->ip_address = Requests::getIpAddress();
                 $model->user_agent = Requests::getUserAgent();
             } catch (Exception $e) {
@@ -38,5 +37,4 @@ trait AutomateTracking
             }
         });
     }
-
 }

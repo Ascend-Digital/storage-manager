@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Storage;
 
 class StorageManager implements Contracts\StorageManager
 {
-
     /**
      * {@inheritdoc}
      */
@@ -21,12 +20,14 @@ class StorageManager implements Contracts\StorageManager
 
             return FileUpload::create([
                 'original_file_name' => $file->getClientOriginalName(),
-                'key'                => $key = $file->store(($tag ? $tag : 'other'),
-                    env('STORAGE_MANAGER_DISK', 's3')),
-                'url'                => Storage::disk(env('STORAGE_MANAGER_DISK', 's3'))->url($key),
-                'extension'          => $file->clientExtension(),
-                'mime_type'          => $file->getClientMimeType(),
-                'size'               => $file->getSize(),
+                'key' => $key = $file->store(
+                    ($tag ? $tag : 'other'),
+                    env('STORAGE_MANAGER_DISK', 's3')
+                ),
+                'url' => Storage::disk(env('STORAGE_MANAGER_DISK', 's3'))->url($key),
+                'extension' => $file->clientExtension(),
+                'mime_type' => $file->getClientMimeType(),
+                'size' => $file->getSize(),
             ]);
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -48,5 +49,4 @@ class StorageManager implements Contracts\StorageManager
 
         return false;
     }
-
 }
