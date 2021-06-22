@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace AscendDigital\StorageManager\Tests;
 
 class ExampleTest extends TestCase
 {

@@ -1,17 +1,17 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "ascend-digital/storage-manager",
+    "description": "This is my package StorageManager",
     "keywords": [
-        ":vendor_name",
+        "Ascend-Digital",
         "laravel",
-        "package_slug"
+        "storage-manager"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/ascend-digital/storage-manager",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "TKAscend",
+            "email": "83606571+TKAscend@users.noreply.github.com",
             "role": "Developer"
         }
     ],
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "AscendDigital\\StorageManager\\": "src",
+            "AscendDigital\\StorageManager\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "AscendDigital\\StorageManager\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "AscendDigital\\StorageManager\\StorageManagerServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "StorageManager": "AscendDigital\\StorageManager\\StorageManagerFacade"
             }
         }
     },
