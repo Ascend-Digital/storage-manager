@@ -14,7 +14,7 @@ class StorageManager implements Contracts\StorageManager
     public function uploadFile($file, string $tag = null): ?FileUpload
     {
         try {
-            if (app()->runningUnitTests() || app()->runningInConsole()) {
+            if (app()->runningUnitTests()) {
                 $tag = 'tests/'.$tag;
             }
 
