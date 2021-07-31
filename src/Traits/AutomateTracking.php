@@ -20,7 +20,7 @@ trait AutomateTracking
      */
     protected static function bootAutomateTracking()
     {
-        if (! Config::get('storageManager.tracking')) {
+        if (! Config::get('storage-manager.tracking')) {
             return;
         }
         /**
