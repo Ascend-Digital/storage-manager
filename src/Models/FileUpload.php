@@ -17,6 +17,8 @@ class FileUpload extends Model
      */
     protected $table = 'file_uploads';
 
+    protected $hidden = ['svg'];
+
     /**
      * Mass assignable fields
      *
