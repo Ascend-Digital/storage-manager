@@ -18,6 +18,6 @@ class FileUploadObserver
      */
     public function deleted(FileUpload $file)
     {
-        Storage::disk(env('STORAGE_MANAGER_DISK', 's3'))->delete($file->key);
+        Storage::disk(config('storage-manager.disk'))->delete($file->key);
     }
 }
