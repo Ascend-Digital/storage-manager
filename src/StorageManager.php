@@ -52,9 +52,9 @@ class StorageManager implements Contracts\StorageManager
                 'original_file_name' => $file->getClientOriginalName(),
                 'key' => $key = $file->store(
                     ($tag ? $tag : 'other'),
-                    env('STORAGE_MANAGER_DISK', 's3')
+                    config('storage-manager.disk')
                 ),
-                'url' => Storage::disk(env('STORAGE_MANAGER_DISK', 's3'))->url($key),
+                'url' => Storage::disk(config('storage-manager.disk'))->url($key),
                 'extension' => $file->clientExtension(),
                 'mime_type' => $file->getClientMimeType(),
                 'size' => $file->getSize(),
@@ -71,7 +71,7 @@ class StorageManager implements Contracts\StorageManager
      */
     public static function deleteFile(string $key): bool
     {
-        if (Storage::disk(env('STORAGE_MANAGER_DISK', 's3'))->delete($key)
+        if (Storage::disk(config('storage-manager.disk'))->delete($key)
             && FileUpload::where('key', $key)->delete()
         ) {
             return true;
